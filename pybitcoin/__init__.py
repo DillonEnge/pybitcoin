@@ -33,6 +33,7 @@ from .address import (
     address_to_bin_hash160, address_to_hex_hash160,
     address_to_new_cryptocurrency
 )
+from .addressFetcher import AddressFetcher
 from .merkle import MerkleTree, calculate_merkle_pairs, calculate_merkle_root
 
 from .keypair import *
