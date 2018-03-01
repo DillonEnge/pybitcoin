@@ -7,7 +7,10 @@ class LitecoinPrivateKey(BitcoinPrivateKey):
     _pubkeyhash_version_byte = 48
 
 class AddressFetcher():
-    def generateGarlicAddress(private = False):
+    def __init__(self, app=None):
+        self.app = app
+
+    def generateGarlicAddress(self, private = False):
         private_key = BitcoinPrivateKey()
         public_key = private_key.public_key()
         garlicoin_private_key = GarlicoinPrivateKey(private_key.to_hex())
@@ -16,7 +19,7 @@ class AddressFetcher():
             return [garlicoin_public_key.address(), garlicoin_private_key.to_hex()]
         return garlicoin_public_key.address()
 
-    def generateLiteAddress(private = False):
+    def generateLiteAddress(self, private = False):
         private_key = BitcoinPrivateKey()
         public_key = private_key.public_key()
         litecoin_private_key = LitecoinPrivateKey(private_key.to_hex())
