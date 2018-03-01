@@ -7,7 +7,7 @@
     :license: MIT, see LICENSE for more details.
 """
 
-import http.client
+import httplib
 
 from bitcoinrpc.authproxy import AuthServiceProxy
 
