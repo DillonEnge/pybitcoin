@@ -1,4 +1,4 @@
-from .pybitcoin import BitcoinPrivateKey
+from pybitcoin import BitcoinPrivateKey
 
 class GarlicoinPrivateKey(BitcoinPrivateKey):
     _pubkeyhash_version_byte = 38
@@ -7,6 +7,12 @@ class LitecoinPrivateKey(BitcoinPrivateKey):
     _pubkeyhash_version_byte = 48
 
 class AddressFetcher():
+    class GarlicoinPrivateKey(BitcoinPrivateKey):
+        _pubkeyhash_version_byte = 38
+
+    class LitecoinPrivateKey(BitcoinPrivateKey):
+        _pubkeyhash_version_byte = 48
+
     def __init__(self, app=None):
         self.app = app
 
